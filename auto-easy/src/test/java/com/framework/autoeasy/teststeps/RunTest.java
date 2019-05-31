@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions (features = "C:/Automation_Framework_Workspace/auto-easy/src/test/resources/Features/")
+@CucumberOptions (features = "C:/Auto_GitHub_Wrksp/auto-easy/auto-easy/src/test/resources/Features/Demo.feature")
 
 public class RunTest {
 	

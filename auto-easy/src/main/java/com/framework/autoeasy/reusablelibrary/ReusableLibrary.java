@@ -33,10 +33,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.framework.autoeasy.driverfactory.DriverFactory;
+
 import cucumber.api.Scenario;
 
-public class ReusableLibrary {
-public static WebDriver driver = null;
+public class ReusableLibrary extends DriverFactory{
+
 public static String browserTitle = null;
 
 
@@ -331,7 +333,7 @@ WebElement toWebElement) throws InterruptedException {
 Actions builder = new Actions(driver);
 builder.clickAndHold(fromWebElement).moveToElement(toWebElement)
 .perform();
-Thread.sleep(2000);
+
 builder.release(toWebElement).build().perform();
 }
 
@@ -339,7 +341,7 @@ public static void hoverWebelement(WebElement HovertoWebElement)
 throws InterruptedException {
 Actions builder = new Actions(driver);
 builder.moveToElement(HovertoWebElement).perform();
-Thread.sleep(2000);
+
 
 }
 
@@ -427,4 +429,10 @@ Thread.sleep(3000);
 System.out.println(driver.getTitle());
 }
 }
+
+public static boolean isElementDisplayed(WebElement element) {
+	waitTillElementFound(element,10);
+	return (element.isDisplayed());
+}
+
 }

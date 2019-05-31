@@ -36,7 +36,10 @@ public class DriverFactory {
 	            System.out.println("can't read browser type");
 	        }
 	    
-
+	   public void launchUrl() {
+		 String url = new PropertyReader().readProperty("url");  
+		 driver.get(url);  
+	   }
 	    public WebDriver getDriver() {
 	        return driver;
 	    }
