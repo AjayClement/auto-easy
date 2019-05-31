@@ -1,4 +1,4 @@
-package com.framework.autoeasy.auto_easy.reusablelibrary;
+package com.framework.autoeasy.reusablelibrary;
 
 
 
