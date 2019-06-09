@@ -91,14 +91,15 @@ driver.switchTo().defaultContent();
 
 public static void waitForElement(WebElement element) {
 
-WebDriverWait wait = new WebDriverWait(driver, 10);
+WebDriverWait wait = new WebDriverWait(driver, 5);
 wait.until(ExpectedConditions.elementToBeClickable(element));
 }
 
-public static void waitTillElementFound(WebElement ElementTobeFound,
-int seconds) {
+
+/*method overloading*/
+public static void waitForElement(WebElement element,int seconds) {
 WebDriverWait wait = new WebDriverWait(driver, seconds);
-wait.until(ExpectedConditions.visibilityOf(ElementTobeFound));
+wait.until(ExpectedConditions.visibilityOf(element));
 }
 
 public static void takeScreenshotOfWebelement(WebDriver driver,
@@ -431,7 +432,7 @@ System.out.println(driver.getTitle());
 }
 
 public static boolean isElementDisplayed(WebElement element) {
-	waitTillElementFound(element,10);
+	waitForElement(element,10);
 	return (element.isDisplayed());
 }
 
